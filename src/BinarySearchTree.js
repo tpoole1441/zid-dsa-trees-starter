@@ -112,11 +112,11 @@ class BinarySearchTree {
     values.push(this.value);
 
     if (this.left) {
-      values = this.left.dfsInOrder(values);
+      values = this.left.dfsPreOrder(values);
     }
 
     if (this.right) {
-      values = this.right.dfsInOrder(values);
+      values = this.right.dfsPreOrder(values);
     }
 
     return values;
@@ -124,11 +124,11 @@ class BinarySearchTree {
 
   dfsPostOrder(values = []) {
     if (this.left) {
-      values = this.left.dfsInOrder(values);
+      values = this.left.dfsPostOrder(values);
     }
 
     if (this.right) {
-      values = this.right.dfsInOrder(values);
+      values = this.right.dfsPostOrder(values);
     }
 
     values.push(this.value);
